@@ -1,0 +1,3 @@
+# 30-Second Elevator Pitch
+
+"Merchants lose millions not just to fraudsters, but to invisible technical glitches—like a gateway timeout colliding with a delayed webhook causing a duplicate capture. Traditional rules engines can't catch these complex interactions. Financial CSI is an AI Risk Manager that mines these event lifecycles to statistically discover hidden loss patterns. It validates them on held-out data, uses AI to provide evidence-grounded forensic explanations, and runs counterfactual simulations to determine if intervening actually saves money after accounting for false-positive friction costs."

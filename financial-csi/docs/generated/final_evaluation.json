@@ -1,0 +1,39 @@
+{
+  "holdout": {
+    "train_count": 8000,
+    "test_count": 2000,
+    "overlap_count": 0
+  },
+  "baseline": {
+    "test_loss_rate": 0.0295
+  },
+  "discovery": {
+    "pattern_count": 50,
+    "top_pattern_id": "PTN_1",
+    "top_pattern_risk_multiplier": 23.2090781342077,
+    "top_pattern_test_support": 289
+  },
+  "simulation": [
+    {
+      "scenario": "Conservative",
+      "intervention": "Require Verification",
+      "effectiveness": 0.6,
+      "net_benefit_paise": 34449019,
+      "recommendation": "RECOMMEND_INTERVENTION"
+    },
+    {
+      "scenario": "Balanced",
+      "intervention": "Hold Second Capture",
+      "effectiveness": 0.75,
+      "net_benefit_paise": 43445901,
+      "recommendation": "RECOMMEND_INTERVENTION"
+    },
+    {
+      "scenario": "Aggressive",
+      "intervention": "Delay Retry",
+      "effectiveness": 0.9,
+      "net_benefit_paise": 52162254,
+      "recommendation": "RECOMMEND_INTERVENTION"
+    }
+  ]
+}
