@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { useEffect, useState } from 'react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -14,7 +15,7 @@ export default function EvaluationPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/evaluation')
+    fetch(`${API_BASE_URL}/api/evaluation`)
       .then(r => {
         if (!r.ok) throw new Error('Evaluation data not found.');
         return r.json();

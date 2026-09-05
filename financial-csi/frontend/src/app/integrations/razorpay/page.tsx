@@ -1,4 +1,5 @@
 "use client";
+import { API_BASE_URL } from "@/lib/api";
 
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/Card";
@@ -42,8 +43,8 @@ export default function RazorpayIntegrationPage() {
     try {
       setLoading(true);
       const [statusRes, eventsRes] = await Promise.all([
-        fetch('http://localhost:8000/api/integrations/razorpay/status'),
-        fetch('http://localhost:8000/api/integrations/razorpay/events')
+        fetch(`${API_BASE_URL}/api/integrations/razorpay/status`),
+        fetch(`${API_BASE_URL}/api/integrations/razorpay/events`)
       ]);
       if (statusRes.ok) {
         setStatus(await statusRes.json());
@@ -67,7 +68,7 @@ export default function RazorpayIntegrationPage() {
   const handleTestConnection = async () => {
     setTesting(true);
     try {
-      const res = await fetch('http://localhost:8000/api/integrations/razorpay/test-connection', {
+      const res = await fetch(`${API_BASE_URL}/api/integrations/razorpay/test-connection`, {
         method: 'POST'
       });
       const data = await res.json();
@@ -86,7 +87,7 @@ export default function RazorpayIntegrationPage() {
   const simulateWebhook = async (fixtureId: string) => {
     setSimulating(true);
     try {
-      await fetch(`http://localhost:8000/api/webhooks/razorpay/simulate?fixture_id=${fixtureId}`, {
+      await fetch(`${API_BASE_URL}/api/webhooks/razorpay/simulate?fixture_id=${fixtureId}`, {
         method: 'POST'
       });
       await fetchData();

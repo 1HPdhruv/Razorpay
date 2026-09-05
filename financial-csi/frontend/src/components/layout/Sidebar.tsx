@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { classNames } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +11,7 @@ export function Sidebar() {
   const [rzpStatus, setRzpStatus] = useState<any>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/integrations/razorpay/status')
+    fetch(`${API_BASE_URL}/api/integrations/razorpay/status`)
       .then(res => res.json())
       .then(setRzpStatus)
       .catch(() => {});

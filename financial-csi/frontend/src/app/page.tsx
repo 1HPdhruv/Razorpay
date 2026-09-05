@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { useEffect, useState } from 'react';
 import { StatCard } from "@/components/ui/StatCard";
 import { Badge } from "@/components/ui/Badge";
@@ -17,9 +18,9 @@ export default function Home() {
   
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:8000/api/health').then(r => r.json()),
-      fetch('http://localhost:8000/api/transactions').then(r => r.json()),
-      fetch('http://localhost:8000/api/patterns').then(r => r.json())
+      fetch(`${API_BASE_URL}/api/health`).then(r => r.json()),
+      fetch(`${API_BASE_URL}/api/transactions`).then(r => r.json()),
+      fetch(`${API_BASE_URL}/api/patterns`).then(r => r.json())
     ])
     .then(([healthData, txData, patternsData]) => {
       setHealth(healthData);

@@ -4,7 +4,7 @@ from pathlib import Path
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Financial CSI API"
     VERSION: str = "0.1.0"
-    CORS_ORIGINS: list = ["*"]
+    CORS_ORIGINS: list = ["http://localhost:3000", "http://127.0.0.1:3000"]
     
     # Razorpay Settings
     RAZORPAY_ENABLED: bool = False

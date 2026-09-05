@@ -14,4 +14,14 @@ venv/
 data/raw/*
 data/processed/*
 data/generated/*
+!data/generated/train/
+!data/generated/test/
+!data/generated/discovered_patterns.json
+!data/generated/discovered_patterns.csv
+!data/generated/intervention_comparison.json
+!data/generated/manifest.json
+data/generated/train/*
+!data/generated/train/*.csv
+data/generated/test/*
+!data/generated/test/*.csv
 .DS_Store

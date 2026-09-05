@@ -1,0 +1,35 @@
+{
+  "SCENARIO_CONSERVATIVE": {
+    "name": "Conservative",
+    "intervention": "Require Verification",
+    "effectiveness": 0.6,
+    "observed_loss_paise": 5792604100,
+    "estimated_prevented_loss_paise": 3478751900,
+    "intervention_cost_paise": 144500,
+    "false_positive_cost_paise": 194000,
+    "net_estimated_benefit_paise": 3478413400,
+    "recommendation": "RECOMMEND_INTERVENTION"
+  },
+  "SCENARIO_BALANCED": {
+    "name": "Balanced",
+    "intervention": "Hold Second Capture",
+    "effectiveness": 0.75,
+    "observed_loss_paise": 5792604100,
+    "estimated_prevented_loss_paise": 4352330100,
+    "intervention_cost_paise": 28900,
+    "false_positive_cost_paise": 48500,
+    "net_estimated_benefit_paise": 4352252700,
+    "recommendation": "RECOMMEND_INTERVENTION"
+  },
+  "SCENARIO_AGGRESSIVE": {
+    "name": "Aggressive",
+    "intervention": "Delay Retry",
+    "effectiveness": 0.9,
+    "observed_loss_paise": 5792604100,
+    "estimated_prevented_loss_paise": 5218640400,
+    "intervention_cost_paise": 14450,
+    "false_positive_cost_paise": 9700,
+    "net_estimated_benefit_paise": 5218616250,
+    "recommendation": "RECOMMEND_INTERVENTION"
+  }
+}

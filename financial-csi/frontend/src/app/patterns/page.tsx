@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
@@ -14,7 +15,7 @@ export default function Patterns() {
   const [filter, setFilter] = useState('all');
   
   useEffect(() => {
-    fetch('http://localhost:8000/api/patterns')
+    fetch(`${API_BASE_URL}/api/patterns`)
       .then(r => r.json())
       .then(setPatterns)
       .catch(console.error)

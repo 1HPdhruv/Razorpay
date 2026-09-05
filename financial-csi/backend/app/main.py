@@ -4,9 +4,11 @@ from app.api.routes import health, transactions, patterns, investigations, simul
 
 app = FastAPI(title="Financial CSI API", version="0.1.0")
 
+from app.core.config import settings
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

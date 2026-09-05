@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/Card';
@@ -13,7 +14,7 @@ export default function InvestigationDetail({ params }: { params: { patternId: s
   const [error, setError] = useState('');
   
   useEffect(() => {
-    fetch(`http://localhost:8000/api/investigations/${params.patternId}`)
+    fetch(`${API_BASE_URL}/api/investigations/${params.patternId}`)
       .then(async r => {
         if (!r.ok) throw new Error(await r.text());
         return r.json();

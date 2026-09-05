@@ -1,4 +1,5 @@
 'use client';
+import { API_BASE_URL } from "@/lib/api";
 import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Card } from '@/components/ui/Card';
@@ -24,14 +25,14 @@ function SimulationsContent() {
   const [loading, setLoading] = useState(false);
   
   useEffect(() => {
-    fetch('http://localhost:8000/api/patterns')
+    fetch(`${API_BASE_URL}/api/patterns`)
       .then(r => r.json())
       .then(setPatterns);
   }, []);
   
   useEffect(() => {
     if (patternId) {
-      fetch(`http://localhost:8000/api/simulations/pattern/${patternId}`)
+      fetch(`${API_BASE_URL}/api/simulations/pattern/${patternId}`)
         .then(r => r.json())
         .then(data => {
           setScenarios(data.scenarios);
@@ -45,7 +46,7 @@ function SimulationsContent() {
   useEffect(() => {
     if (patternId && scenarioId) {
       setLoading(true);
-      fetch('http://localhost:8000/api/simulations/intervention', {
+      fetch(`${API_BASE_URL}/api/simulations/intervention`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pattern_id: patternId, scenario_id: scenarioId, runs, seed })
